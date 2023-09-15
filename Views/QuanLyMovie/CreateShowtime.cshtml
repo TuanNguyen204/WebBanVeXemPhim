@@ -1,0 +1,47 @@
+﻿@model BaiTapLonWeb.Models.SUATCHIEU
+@{
+    ViewBag.Title = "CreateShowtime";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>CreateShowtime</h2>
+
+@using(Html.BeginForm())
+            {
+            <table>
+                <tr>
+                    <td>Mã suất</td>
+                    <td>
+                        @Html.TextBox("MASUAT") @ViewData["Loi_1"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày chiếu</td>
+                    <td>
+                        @Html.TextBox("NGAYCHIEU") @ViewData["Loi_2"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phòng</td>
+                    <td>
+                        @Html.DropDownList("PHONG")
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phim</td>
+                    <td>
+                        @Html.DropDownList("PHIM")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Thêm mới" class="btn-default" />
+                    </td>
+                </tr>
+            </table>
+            }
+
+<div>
+    @Html.ActionLink("Trở về ", "AllShowtime")
+</div>
+

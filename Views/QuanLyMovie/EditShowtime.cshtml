@@ -1,0 +1,44 @@
+﻿@model BaiTapLonWeb.Models.SUATCHIEU
+@{
+    ViewBag.Title = "EditShowtime";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>EditShowtime</h2>
+
+<h3>Mã suất chiếu : @Model.MASUAT</h3>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>Ngày chiếu</td>
+            <td>@Html.TextBox("NGAYCHIEU")</td>
+        </tr>
+        <tr>
+            <td>Phim</td>
+            <td>
+                @Html.DropDownList("PHIM")
+            </td>
+        </tr>
+        <tr>
+            <td>Phòng</td>
+            <td>
+                @Html.DropDownList("PHONG")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Sửa" class="btn-default"/>
+            </td>
+        </tr>
+    </table>
+}
+
+<div>
+    @Html.ActionLink("Quay lại", "AllShowtime")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

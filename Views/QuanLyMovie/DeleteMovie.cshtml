@@ -1,0 +1,46 @@
+﻿@model BaiTapLonWeb.Models.PHIM
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có chắc muốn xóa phim</h3>
+<div>
+    <h4>Movie</h4>
+    <table>
+        <tr>
+            <td>Mã phim</td>
+            <td>@Model.MAPHIM</td>
+        </tr>
+        <tr>
+            <td>Tên phim</td>
+            <td>@Model.TENPHIM</td>
+        </tr>
+        <tr>
+            <td>Thể loại</td>
+            <td>@Model.THELOAI.TENTL</td>
+        </tr>
+        <tr>
+            <td>Giá vé</td>
+            <td>@Model.GIAVE</td>
+        </tr>
+        <tr>
+            <td>Hình ảnh</td>
+            <td>@Html.DisplayFor(model=>model.HINHANH)</td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở lại", "AllMovie")
+        </div>
+    }
+</div>
+

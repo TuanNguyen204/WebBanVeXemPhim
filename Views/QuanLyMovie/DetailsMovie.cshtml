@@ -1,0 +1,47 @@
+﻿@model BaiTapLonWeb.Models.PHIM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <table>
+        <tr>
+            <td>Mã phim</td>
+            <td>@Model.MAPHIM</td>
+        </tr>
+        <tr>
+            <td>Tên phim</td>
+            <td>@Model.TENPHIM</td>
+        </tr>
+        <tr>
+            <td>Thể loại</td>
+            <td>@Model.THELOAI.TENTL</td>
+        </tr>
+        <tr>
+            <td>Đạo diễn</td>
+            <td>@Model.DAODIEN</td>
+        </tr>
+        <tr>
+            <td>Mô tả</td>
+            <td>@Model.MOTA</td>
+        </tr>
+        <tr>
+            <td>Giá vé</td>
+            <td>@Model.GIAVE</td>
+        </tr>
+        <tr>
+            <td>Hình ảnh</td>
+            <td>@Html.DisplayFor(model=>model.HINHANH)</td>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "EditMovie", new { id = Model.MAPHIM }) |
+    @Html.ActionLink("Xóa", "DeleteMovie", new { id = Model.MAPHIM }) |
+    @Html.ActionLink("Trở về", "AllMovie")
+</p>

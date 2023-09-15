@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BaiTapLonWeb.Models.SUATCHIEU>
+@{
+    ViewBag.Title = "AllShowtime";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>AllShowtime</h2>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Mã suất</th>
+            <th>Ngày chiếu</th>
+            <th>Phim</th>
+            <th>Phòng</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.MASUAT
+                </td>
+                <td>
+                    @item.NGAYCHIEU
+                </td>
+                <td>
+                    @item.MAPHIM
+                </td>
+                <td>
+                    @item.MAPHONG
+                </td>
+                <td>
+                    @Html.ActionLink("Sửa", "EditShowtime", new { id = item.MASUAT }) |
+                    @Html.ActionLink("Xóa", "DeleteShowtime", new { id = item.MASUAT })
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Thêm mới", "CreateShowtime")
+    </div>
+    <div>
+        @Html.ActionLink("Trở về", "Index")
+    </div>
+
+
+</body>

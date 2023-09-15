@@ -1,0 +1,41 @@
+﻿@model BaiTapLonWeb.Models.SUATCHIEU
+@{
+    ViewBag.Title = "DeleteShowtime";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>DeleteShowtime</h2>
+
+<h3>Bạn có chắc muốn xóa suất chiếu này</h3>
+<div>
+
+    <table>
+        <tr>
+            <td>Mã suất</td>
+            <td>@Model.MASUAT</td>
+        </tr>
+        <tr>
+            <td>Ngày chiếu</td>
+            <td>@Model.NGAYCHIEU</td>
+        </tr>
+        <tr>
+            <td>Phòng</td>
+            <td>@Model.MAPHONG</td>
+        </tr>
+        <tr>
+            <td>Phim</td>
+            <td>@Model.MAPHIM</td>
+        </tr>
+
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Trở lại", "AllShowtime")
+        </div>
+    }
+</div>

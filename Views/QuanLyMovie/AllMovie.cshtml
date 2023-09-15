@@ -1,0 +1,54 @@
+﻿@model IEnumerable<BaiTapLonWeb.Models.PHIM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "CreateMovie")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã phim
+        </th>
+        <th>
+            Tên phim
+        </th>
+        <th>
+             Giá vé
+        </th>
+        <th>
+             Hình ảnh
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.MAPHIM
+        </td>
+        <td>
+           @item.TENPHIM
+        </td>
+        <td>
+            @item.GIAVE
+        </td>
+        <td>            
+            <img src="~/Content/HinhAnh/@item.HINHANH" width="200" height="250" />
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "EditMovie", new { id=item.MAPHIM }) |
+            @Html.ActionLink("Chi tiết", "DetailsMovie", new { id=item.MAPHIM }) |
+            @Html.ActionLink("Xóa", "DeleteMovie", new { id=item.MAPHIM})
+        </td>
+    </tr>
+}
+
+</table>
+
+@Html.ActionLink("Trở về","Index")

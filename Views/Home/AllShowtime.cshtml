@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "AllShowtime";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>AllShowtime</h2>
+
+<table border="1">    
+    <tr>
+        <th>Suất</th>
+        <th> Ngày chiếu</th>
+        <th>Phim</th>
+        <th>Phòng</th>
+    </tr>
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.MASUAT</td>
+                    <td>@item.PHIM.TENPHIM</td>                    
+                    <td>@item.NGAYCHIEU</td>
+                    <td>@item.PHONG.TENPHONG</td>
+                </tr>
+            }
+</table>
+
+@Html.ActionLink("Quay lại","AllMovie")

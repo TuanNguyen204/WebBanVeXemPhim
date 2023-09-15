@@ -1,0 +1,93 @@
+﻿@model BaiTapLonWeb.Models.PHIM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>SỬA THÔNG TIN PHIM</h2>
+
+
+@using (Html.BeginForm())
+{
+<table>    
+    <tr>
+        <td>Tên phim</td>
+        <td>@Html.TextBox("TENPHIM") @ViewData["Loi_1"]</td>
+    </tr>
+    <tr>
+        <td>Thể loại</td>
+        <td>
+            @Html.DropDownList("THELOAI")
+        </td>
+    </tr>
+    <tr>
+        <td>Đạo diễn</td>
+        <td>@Html.TextBox("DAODIEN") @ViewData["Loi_2"]</td>
+    </tr>
+    <tr>
+        <td>Mô tả</td>
+        <td>
+            @Html.TextArea("MOTA") @ViewData["Loi_3"]
+        </td>
+    </tr>
+    <tr>
+        <td>Giá vé</td>
+        <td>@Html.TextBox("GIAVE") @ViewData["Loi_4"]</td>
+    </tr>
+    <tr>
+        <td>Hình ảnh</td>
+        <td>@Html.TextBox("HINHANH") @ViewData["Loi_5"]</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Sửa" class="btn-default" />
+        </td>
+    </tr>
+
+</table>    
+}
+
+<div>
+    @Html.ActionLink("Trở về", "AllMovie")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@*<div class="form-horizontal">
+    <h4>Movie</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.MAPHIM)
+    <div class="form-group">
+        @Html.LabelFor(model => model.TENPHIM, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TENPHIM)
+            @Html.ValidationMessageFor(model => model.TENPHIM)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.GIAVE, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GIAVE)
+            @Html.ValidationMessageFor(model => model.GIAVE)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HINHANH, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.HINHANH)
+
+        </div>
+    </div>
+    <img src="~/Content/HinhAnh/@Model.HINHANH" width="200" height="250" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>*@
